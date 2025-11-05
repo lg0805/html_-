@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            position: relative;
+            /* 为绝对定位子元素提供参考 */
+            width: 200px;
+            height: 150px;
+            border: 2px solid transparent;
+            /* 初始透明边框 */
+            overflow: hidden;
+            /* 隐藏超出部分 */
+            transition: all 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .item:hover {
+            border-color: #27ae60;
+            /* 悬停时边框变绿色 */
+        }
+
+        .mask {
+            position: absolute;
+            bottom: -83px;
+
+            /* 初始位置：隐藏在下方 */
+            left: 0;
+            width: 100%;
+            height: 83px;
+            background-color: #27ae60;
+            color: white;
+            text-align: center;
+            line-height: 83px;
+            transition: transform 0.3s ease;
+            /* 添加变换过渡 */
+        }
+
+        .item:hover .mask {
+            transform: translateY(-83px);
+            /* 悬停时上移显示 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-right">
+        <ul>
+            <li class="item">
+                <a href="#">商品链接</a>
+                <div class="mask">找相似</div>
+            </li>
+            <!-- 更多列表项 -->
+        </ul>
+    </div>
+</body>
+
+</html>
